@@ -44,8 +44,8 @@ abstract class BaseBadgeType extends TestCase
          $method = $this->getInstance()->urlTemplate();
 
          $this->assertInternalType('string', $method);
-         $this->contains('http', $method);
-         $this->contains('$PACKAGE_NAME$', $method);
+         $this->assertContains('http', $method);
+         $this->assertContains('$PACKAGE_NAME$', $method);
      }
 
     /**
@@ -56,8 +56,8 @@ abstract class BaseBadgeType extends TestCase
         $method = $this->getInstance()->imageUrlTemplate();
 
         $this->assertInternalType('string', $method);
-        $this->contains('http', $method);
-        $this->contains('$PACKAGE_NAME$', $method);
+        $this->assertContains('http', $method);
+        $this->assertContains('$PACKAGE_NAME$', $method);
     }
 
     /**
@@ -68,7 +68,7 @@ abstract class BaseBadgeType extends TestCase
         $method = $this->getInstance()->alternativeText();
 
         $this->assertInternalType('string', $method);
-        $this->contains('http', $method);
+        $this->assertContains('http', $method);
     }
     
     /** 
