@@ -109,14 +109,15 @@ class Badges
      *
      * @param $badgeClass
      * @return Writer
-     * @throws Exceptions\RequiredAttributeNotPassed
      * @throws ClassShouldBeInstanceOfBadgeType
      */
-    public function get($badgeClass)
+    public function get($badgeClassName)
     {
+        $badgeClass = $badgeClassName::create($this->attributes);
+
         if ($badgeClass instanceof BadgeType) {
-            return new Writer($badgeClass::create($this->attributes));
+            return new Writer($badgeClass);
         }
-        throw new ClassShouldBeInstanceOfBadgeType("$badgeClass is not an instance of BadgeType");
+        throw new ClassShouldBeInstanceOfBadgeType("$badgeClassName is not an instance of BadgeType");
     }
 }

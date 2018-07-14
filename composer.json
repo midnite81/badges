@@ -19,8 +19,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Midnite81\\Badges\\": "src",
-            "Midnite81\\Badges\\Tests\\": "tests"
+            "Midnite81\\Badges\\": "src/",
+            "Midnite81\\Badges\\Tests\\": "tests/"
         }
     }
 }

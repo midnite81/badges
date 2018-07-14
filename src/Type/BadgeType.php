@@ -66,7 +66,7 @@ abstract class BadgeType
      *
      * @return string
      */
-    public function getUrl()
+    public function getUrlTemplate()
     {
         return $this->convertString($this->urlTemplate());
     }
@@ -105,7 +105,7 @@ abstract class BadgeType
      */
     public function getHtmlTemplate()
     {
-        return "<a href=\"{$this->getUrl()}\"><img src=\"{$this->getImageUrl()}\" alt=\"{$this->getAlternativeText()}\"></a>";
+        return "<a href=\"{$this->getUrlTemplate()}\"><img src=\"{$this->getImageUrl()}\" alt=\"{$this->getAlternativeText()}\"></a>";
     }
 
 
@@ -116,7 +116,7 @@ abstract class BadgeType
      */
     public function getMarkdownTemplate()
     {
-        return "[![{$this->getAlternativeText()}]({$this->getImageUrl()})]({$this->getUrl()})";
+        return "[![{$this->getAlternativeText()}]({$this->getImageUrl()})]({$this->getUrlTemplate()})";
     }
 
     /**
