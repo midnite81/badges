@@ -68,7 +68,6 @@ abstract class BaseBadgeType extends TestCase
         $method = $this->getInstance()->alternativeText();
 
         $this->assertInternalType('string', $method);
-        $this->assertContains('http', $method);
     }
     
     /** 
