@@ -14,7 +14,7 @@ run `composer require midnite81/badges`.
 
 ## Badges Supported
 
-| Type             | Example |
+| Type             | Example                                                                                                                                                    |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Latest Stable     |[![Latest Stable Version](https://poser.pugx.org/midnite81/badges/version)](https://packagist.org/packages/midnite81/badges)                                |
 |Total Downloads   |[![Total Downloads](https://poser.pugx.org/midnite81/badges/downloads)](https://packagist.org/packages/midnite81/badges)                                    |
@@ -22,6 +22,7 @@ run `composer require midnite81/badges`.
 |Licence           |[![License](https://poser.pugx.org/midnite81/badges/license.svg)](https://packagist.org/packages/midnite81/badges)                                          |
 |Build             |[![Build](https://travis-ci.org/midnite81/badges.svg?branch=master)](https://travis-ci.org/midnite81/badges)                                                |
 |Coverage          |[![Coverage Status](https://coveralls.io/repos/github/midnite81/badges/badge.svg?branch=master)](https://coveralls.io/github/midnite81/badges?branch=master)|
+|StyleCI           |(Coming soon)                                                                                                                                               |
 
 Over time support for other badges will be added. You can create your own templates which extend 
 `Midnite81\Badges\Type\BadgeType` and can be passed through the `$badges->get(MyClass::class)` method. More 
@@ -43,7 +44,10 @@ to translate the template. By default we're only going to pass the following att
 supported badges. Obviously update the above attributes to suit your own needs. 
 
 ```php
-$attributes = ['$PACKAGE_NAME$' => 'midnite81/badges'];
+$attributes = [
+    '$PACKAGE_NAME$' => 'midnite81/badges', 
+    '$STYLE_CI$' => 'repoNumber'
+];
 ```
 
 Once the class is instantiated, you then need to select the type of badge you want. 

@@ -116,6 +116,20 @@ class BadgesTest extends TestCase
     /**
      * @test
      */
+    public function it_returns_style_ci()
+    {
+        $badge = $this->getInstance()->styleCi();
+
+        $this->assertInstanceOf(Writer::class, $badge);
+        $this->assertInternalType('string', $badge->toHtml());
+        $this->assertInternalType('string', $badge->toMarkdown());
+        $this->assertContains('<a href', $badge->toHtml());
+        $this->assertContains('[![', $badge->toMarkdown());
+    }
+
+    /**
+     * @test
+     */
     public function it_returns_writer_from_get_method()
     {
         $badge = $this->getInstance()->get(Licence::class);
@@ -145,7 +159,10 @@ class BadgesTest extends TestCase
      */
     protected function getInstance($attributes = [])
     {
-        $attributes = (! empty($attributes)) ? $attributes : ['$PACKAGE_NAME$' => 'test/test'];
+        $attributes = (! empty($attributes)) ? $attributes : [
+            '$PACKAGE_NAME$' => 'test/test',
+            '$STYLE_CI$' => '12345'
+        ];
         return new Badges($attributes);
     }
 
@@ -157,7 +174,10 @@ class BadgesTest extends TestCase
      */
     public function getFactoryInstance($attributes = [])
     {
-        $attributes = (! empty($attributes)) ? $attributes : ['$PACKAGE_NAME$' => 'test/test'];
+        $attributes = (! empty($attributes)) ? $attributes : [
+            '$PACKAGE_NAME$' => 'test/test',
+            '$STYLE_CI$' => '12345'
+        ];
         return Badges::create($attributes);
     }
 

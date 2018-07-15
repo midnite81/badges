@@ -8,6 +8,7 @@ use Midnite81\Badges\Type\CoverageStatus;
 use Midnite81\Badges\Type\LatestStableVersion;
 use Midnite81\Badges\Type\LatestUnstableVersion;
 use Midnite81\Badges\Type\Licence;
+use Midnite81\Badges\Type\StyleCI;
 use Midnite81\Badges\Type\TotalDownload;
 
 class Badges
@@ -102,6 +103,17 @@ class Badges
     public function coverageStatus()
     {
         return new Writer(new CoverageStatus($this->attributes));
+    }
+
+    /**
+     * Get Style CI
+     *
+     * @return Writer
+     * @throws Exceptions\RequiredAttributeNotPassed
+     */
+    public function styleCi()
+    {
+        return new Writer(new StyleCI($this->attributes));
     }
 
     /**

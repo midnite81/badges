@@ -8,7 +8,8 @@ use PHPUnit\Framework\TestCase;
 abstract class BaseBadgeType extends TestCase
 {
     protected $attributes = [
-        '$PACKAGE_NAME$' => 'test/test'
+        '$PACKAGE_NAME$' => 'test/test',
+        '$STYLE_CI$' => 12345
     ];
 
     /**
