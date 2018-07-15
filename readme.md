@@ -22,6 +22,7 @@ run `composer require midnite81/badges`.
 |Licence           |[![License](https://poser.pugx.org/midnite81/badges/license.svg)](https://packagist.org/packages/midnite81/badges)                                          |
 |Build             |[![Build](https://travis-ci.org/midnite81/badges.svg?branch=master)](https://travis-ci.org/midnite81/badges)                                                |
 |Coverage          |[![Coverage Status](https://coveralls.io/repos/github/midnite81/badges/badge.svg?branch=master)](https://coveralls.io/github/midnite81/badges?branch=master)|
+|Gitter            |[![Join the chat at https://gitter.im/midnite81/badges](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/midnite81/badges/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)                                                                                                                                              |
 |StyleCI           |(Coming soon)                                                                                                                                               |
 
 Over time support for other badges will be added. You can create your own templates which extend 

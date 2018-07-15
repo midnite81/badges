@@ -130,6 +130,20 @@ class BadgesTest extends TestCase
     /**
      * @test
      */
+    public function it_returns_gitter()
+    {
+        $badge = $this->getInstance()->gitter();
+
+        $this->assertInstanceOf(Writer::class, $badge);
+        $this->assertInternalType('string', $badge->toHtml());
+        $this->assertInternalType('string', $badge->toMarkdown());
+        $this->assertContains('<a href', $badge->toHtml());
+        $this->assertContains('[![', $badge->toMarkdown());
+    }
+
+    /**
+     * @test
+     */
     public function it_returns_writer_from_get_method()
     {
         $badge = $this->getInstance()->get(Licence::class);

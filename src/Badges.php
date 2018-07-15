@@ -5,6 +5,7 @@ use Midnite81\Badges\Exceptions\ClassShouldBeInstanceOfBadgeType;
 use Midnite81\Badges\Type\BadgeType;
 use Midnite81\Badges\Type\Build;
 use Midnite81\Badges\Type\CoverageStatus;
+use Midnite81\Badges\Type\Gitter;
 use Midnite81\Badges\Type\LatestStableVersion;
 use Midnite81\Badges\Type\LatestUnstableVersion;
 use Midnite81\Badges\Type\Licence;
@@ -114,6 +115,17 @@ class Badges
     public function styleCi()
     {
         return new Writer(new StyleCI($this->attributes));
+    }
+
+    /**
+     * Get Gitter
+     *
+     * @return Writer
+     * @throws Exceptions\RequiredAttributeNotPassed
+     */
+    public function gitter()
+    {
+        return new Writer(new Gitter($this->attributes));
     }
 
     /**
