@@ -9,7 +9,8 @@ abstract class BaseBadgeType extends TestCase
 {
     protected $attributes = [
         '$PACKAGE_NAME$' => 'test/test',
-        '$STYLE_CI$' => 12345
+        '$STYLE_CI$' => 12345,
+        '$GITTER_ROOM$' => 'test-room',
     ];
 
     /**

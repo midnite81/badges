@@ -7,14 +7,22 @@ use Midnite81\Badges\Type\Gitter;
 
 class GitterTest extends BaseBadgeType
 {
-    public function it_returns_passed_image_url()
+
+    /**
+     * @test
+     */
+    public function it_returns_the_url_template()
     {
-        $method = $this->getInstance()->getImageUrl();
+        $method = $this->getInstance()->urlTemplate();
 
         $this->assertInternalType('string', $method);
         $this->assertContains('http', $method);
+        $this->assertContains('$GITTER_ROOM$', $method);
     }
-    
+
+    /**
+     * @test
+     */
     public function it_returns_the_image_url_template()
     {
         $method = $this->getInstance()->imageUrlTemplate();
@@ -22,7 +30,66 @@ class GitterTest extends BaseBadgeType
         $this->assertInternalType('string', $method);
         $this->assertContains('http', $method);
     }
-    
+
+    /**
+     * @test
+     */
+    public function it_provides_the_required_attributes_as_an_array()
+    {
+        $method = $this->getInstance()->requiredAttributes();
+
+        $this->assertInternalType('array', $method);
+        $this->assertContains('$GITTER_ROOM$', $method);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_passed_url()
+    {
+        $method = $this->getInstance()->getUrlTemplate();
+
+        $this->assertInternalType('string', $method);
+        $this->assertContains('test-room', $method);
+        $this->assertContains('http', $method);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_the_markdown_template()
+    {
+        $method = $this->getInstance()->getMarkdownTemplate();
+
+        $this->assertInternalType('string', $method);
+        $this->assertContains('test-room', $method);
+        $this->assertContains('[![', $method);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_passed_image_url()
+    {
+        $method = $this->getInstance()->getImageUrl();
+
+        $this->assertInternalType('string', $method);
+        $this->assertContains('http', $method);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_the_html_template()
+    {
+        //
+        $method = $this->getInstance()->getHtmlTemplate();
+
+        $this->assertInternalType('string', $method);
+        $this->assertContains('test-room', $method);
+        $this->assertContains('<a href', $method);
+    }
+
     /**
      * Get instance of class
      *

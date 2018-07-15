@@ -175,7 +175,8 @@ class BadgesTest extends TestCase
     {
         $attributes = (! empty($attributes)) ? $attributes : [
             '$PACKAGE_NAME$' => 'test/test',
-            '$STYLE_CI$' => '12345'
+            '$STYLE_CI$' => '12345',
+            '$GITTER_ROOM$' => 'gitter-room'
         ];
         return new Badges($attributes);
     }
@@ -190,7 +191,8 @@ class BadgesTest extends TestCase
     {
         $attributes = (! empty($attributes)) ? $attributes : [
             '$PACKAGE_NAME$' => 'test/test',
-            '$STYLE_CI$' => '12345'
+            '$STYLE_CI$' => '12345',
+            '$GITTER_ROOM$' => 'gitter-room'
         ];
         return Badges::create($attributes);
     }

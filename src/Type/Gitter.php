@@ -12,7 +12,7 @@ class Gitter extends BadgeType
      */
     public function urlTemplate()
     {
-        return 'https://gitter.im/$PACKAGE_NAME$/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge';
+        return 'https://gitter.im/$GITTER_ROOM$/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge';
     }
 
     /**
@@ -32,7 +32,7 @@ class Gitter extends BadgeType
      */
     public function alternativeText()
     {
-        return 'Join the chat at https://gitter.im/$PACKAGE_NAME$';
+        return 'Join the chat at https://gitter.im/$GITTER_ROOM$';
     }
 
     /**
@@ -43,7 +43,7 @@ class Gitter extends BadgeType
     public function requiredAttributes()
     {
         return [
-            '$PACKAGE_NAME$'
+            '$GITTER_ROOM$'
         ];
     }
 }
