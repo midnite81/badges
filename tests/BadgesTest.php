@@ -146,7 +146,7 @@ class BadgesTest extends TestCase
      */
     public function it_returns_scruitinizer()
     {
-        $badge = $this->getInstance()->gitter();
+        $badge = $this->getInstance()->scrutinizer();
 
         $this->assertInstanceOf(Writer::class, $badge);
         $this->assertInternalType('string', $badge->toHtml());
