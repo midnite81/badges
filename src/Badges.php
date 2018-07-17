@@ -9,6 +9,7 @@ use Midnite81\Badges\Type\Gitter;
 use Midnite81\Badges\Type\LatestStableVersion;
 use Midnite81\Badges\Type\LatestUnstableVersion;
 use Midnite81\Badges\Type\Licence;
+use Midnite81\Badges\Type\Scrutinizer;
 use Midnite81\Badges\Type\StyleCI;
 use Midnite81\Badges\Type\TotalDownload;
 
@@ -126,6 +127,17 @@ class Badges
     public function gitter()
     {
         return new Writer(new Gitter($this->attributes));
+    }
+
+    /**
+     * Get Scrutinizier
+     *
+     * @return Writer
+     * @throws Exceptions\RequiredAttributeNotPassed
+     */
+    public function scrutinizer()
+    {
+        return new Writer(new Scrutinizer($this->attributes));
     }
 
     /**
